@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Üyelik Formu</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: url("wallpaper.jpg");  
+            background-size: cover;                  
+            background-position: center;              
+            background-repeat: no-repeat;            
+            background-attachment: fixed;             
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 400px;
+            margin: 50px auto;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px 25px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 22px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 7px;
+            margin-top: 5px;
+        }
+
+        .inline {
+            width: auto;
+            display: inline-block;
+        }
+
+        .buttons {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .buttons input {
+            width: auto;
+            margin: 0 5px;
+            padding: 8px 15px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Üyelik Formu</h1>
+
+    <form action="#" method="post">
+        <label for="ad">Adınız</label>
+        <input type="text" id="ad" name="ad" required>
+
+        <label for="soyad">Soyadınız</label>
+        <input type="text" id="soyad" name="soyad" required>
+
+        <label for="kullanici_adi">Kullanıcı Adı</label>
+        <input type="text" id="kullanici_adi" name="kullanici_adi" required>
+
+        <label for="email">E-posta</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="sifre">Şifre</label>
+        <input type="password" id="sifre" name="sifre" minlength="6" required>
+
+        <label for="sifre2">Şifre (Tekrar)</label>
+        <input type="password" id="sifre2" name="sifre2" minlength="6" required>
+
+        <label for="tel">Telefon</label>
+        <input type="tel" id="tel" name="tel" placeholder="+90 5xx xxx xx xx">
+
+        <label for="dogum">Doğum Tarihi</label>
+        <input type="date" id="dogum" name="dogum">
+
+        <label>Cinsiyet</label>
+        <input class="inline" type="radio" id="erkek" name="cinsiyet" value="erkek">
+        <label class="inline" for="erkek">Erkek</label>
+
+        <input class="inline" type="radio" id="kadin" name="cinsiyet" value="kadin">
+        <label class="inline" for="kadin">Kadın</label>
+
+        <input class="inline" type="radio" id="diger" name="cinsiyet" value="diger">
+        <label class="inline" for="diger">Diğer</label>
+
+        <label for="sehir">Şehir</label>
+        <select id="sehir" name="sehir">
+            <option value="">Seçiniz</option>
+            <option>İstanbul</option>
+            <option>Ankara</option>
+            <option>İzmir</option>
+            <option>Bursa</option>
+            <option>Diğer</option>
+        </select>
+
+        <label>İlgi Alanları</label>
+        <input class="inline" type="checkbox" id="web" name="ilgi" value="web">
+        <label class="inline" for="web">Web</label>
+
+        <input class="inline" type="checkbox" id="mobil" name="ilgi" value="mobil">
+        <label class="inline" for="mobil">Mobil</label>
+
+        <input class="inline" type="checkbox" id="oyun" name="ilgi" value="oyun">
+        <label class="inline" for="oyun">Oyun</label>
+
+        <label for="hakkinda">Kendiniz Hakkında</label>
+        <textarea id="hakkinda" name="hakkinda" rows="3"></textarea>
+
+        <label>
+            <input class="inline" type="checkbox" name="sozlesme" required>
+            Üyelik sözleşmesini okudum, kabul ediyorum.
+        </label>
+
+        <div class="buttons">
+            <input type="submit" value="Kaydol">
+            <input type="reset" value="Temizle">
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
