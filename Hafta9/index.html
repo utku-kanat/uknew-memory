@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab Görevi</title>
+    <style>
+        *{box-sizing:border-box;margin:0;padding:0;}
+        body{
+            font-family:Arial,Helvetica,sans-serif;
+            min-height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+        .konteyner{
+            background:#3266c5;
+            padding:40px 40px 30px;
+            border-radius:8px;
+            min-width:600px;
+        }
+        .ust-alan{
+            display:flex;
+            justify-content:flex-start;
+            margin-bottom:40px;
+        }
+        .yuvarlak{
+            width:90px;
+            height:90px;
+            border-radius:50%;
+            overflow:hidden;
+            background:#ffc83d;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+        .yuvarlak img{
+            width:100%;
+            height:100%;
+            object-fit:cover;
+        }
+        .alt-alan{
+            display:flex;
+            justify-content:space-between;
+            gap:20px;
+        }
+        .kutu{
+            background:#ff8a3d;
+            width:150px;
+            height:100px;
+            border-radius:10px;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+        .kutu img{
+            max-width:90%;
+            max-height:90%;
+            object-fit:contain;
+        }
+
+        .butonlar{
+            margin-top:20px;
+            display:flex;
+            justify-content:space-between;
+            gap:20px;
+        }
+
+        .buton-grup{
+            display:flex;
+            gap:10px;
+        }
+
+        button{
+            padding:6px 10px;
+            border:none;
+            cursor:pointer;
+            border-radius:4px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="konteyner">
+    <div class="ust-alan">
+        <div class="yuvarlak">
+            <img id="ustResim">
+        </div>
+    </div>
+
+    <div class="alt-alan">
+        <div class="kutu"><img id="altResim1"></div>
+        <div class="kutu"><img id="altResim2"></div>
+        <div class="kutu"><img id="altResim3"></div>
+    </div>
+
+    <div class="butonlar">
+        <div class="buton-grup">
+            <button data-target="altResim1" data-type="goster">Göster</button>
+            <button data-target="altResim1" data-type="gizle">Gizle</button>
+        </div>
+
+        <div class="buton-grup">
+            <button data-target="altResim2" data-type="goster">Göster</button>
+            <button data-target="altResim2" data-type="gizle">Gizle</button>
+        </div>
+
+        <div class="buton-grup">
+            <button data-target="altResim3" data-type="goster">Göster</button>
+            <button data-target="altResim3" data-type="gizle">Gizle</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    const resimler=[
+        "img1.png","img2.png","img3.png","img4.png","img5.png",
+        "img6.png","img7.png","img8.png","img9.png","img10.png"
+    ];
+
+    function rastgeleArkaPlan(){
+        const h=Math.floor(Math.random()*360);
+        document.body.style.backgroundColor=`hsl(${h},70%,70%)`;
+    }
+
+    function benzersizIndexler(count,max){
+        const d=[];
+        for(let i=0;i<max;i++) d.push(i);
+        for(let i=d.length-1;i>0;i--){
+            const j=Math.floor(Math.random()*(i+1));
+            [d[i],d[j]]=[d[j],d[i]];
+        }
+        return d.slice(0,count);
+    }
+
+    function sayfaYuklendi(){
+        rastgeleArkaPlan();
+        const indexler=benzersizIndexler(4,resimler.length);
+
+        document.getElementById("ustResim").src=resimler[indexler[0]];
+        document.getElementById("altResim1").src=resimler[indexler[1]];
+        document.getElementById("altResim2").src=resimler[indexler[2]];
+        document.getElementById("altResim3").src=resimler[indexler[3]];
+
+        document.querySelectorAll("button").forEach(btn=>{
+            btn.onclick=()=>{
+                const hedef=btn.getAttribute("data-target");
+                const tip=btn.getAttribute("data-type");
+                const img=document.getElementById(hedef);
+                img.style.display = tip==="goster" ? "block" : "none";
+            };
+        });
+    }
+
+    window.onload=sayfaYuklendi;
+</script>
+
+</body>
+</html>
