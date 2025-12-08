@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UTKU KANAT</title>
+  <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #000;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    header {
+      text-align: center;
+      padding: 100px 20px 60px;
+      background: linear-gradient(180deg, #111 0%, #000 100%);
+    }
+
+    header h1 {
+      font-family: 'Russo One', sans-serif;
+      font-size: 4em;
+      color: #e50914;
+      letter-spacing: 2px;
+      animation: glow 2s infinite alternate;
+    }
+
+    header h2 {
+      font-size: 1.2em;
+      color: #fff;
+      letter-spacing: 1px;
+      margin-top: 10px;
+      opacity: 0.9;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #e50914; }
+      to { text-shadow: 0 0 25px #ff4b4b; }
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #111;
+      padding: 15px 0;
+      gap: 30px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      letter-spacing: 1px;
+      position: relative;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background-color: #e50914;
+      left: 0;
+      bottom: -5px;
+      transition: 0.3s;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    section {
+      padding: 60px 20px;
+      text-align: center;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    section h2 {
+      color: #e50914;
+      font-family: 'Russo One', sans-serif;
+      margin-bottom: 20px;
+      font-size: 2.2em;
+    }
+
+    section p {
+      color: #ccc;
+      font-size: 1.1em;
+      line-height: 1.6em;
+    }
+
+    /* ----- Haftalık Ödevler Bölümü ----- */
+    #odevler {
+      text-align: left;
+      background-color: #fff;
+      color: #000;
+      border-radius: 8px;
+      padding: 40px;
+    }
+
+    #odevler h2 {
+      color: #000;
+      font-family: 'Russo One', sans-serif;
+      font-size: 2em;
+      margin-bottom: 20px;
+      position: relative;
+      display: inline-block;
+    }
+
+    #odevler h2::after {
+      content: "";
+      display: block;
+      width: 90px;
+      height: 3px;
+      background-color: #e50914;
+      margin-top: 6px;
+    }
+
+    #odevler p {
+      color: #111;
+      margin-bottom: 18px;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    #odevler strong {
+      font-weight: 700;
+    }
+
+    #odevler a {
+      color: #e50914;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    #odevler a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      border-top: 1px solid #222;
+      color: #aaa;
+    }
+
+    footer a {
+      color: #e50914;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Utku Kanat</h1>
+  </header>
+
+  <nav>
+    <a href="#odevler">Haftalık Ödevler</a>
+    <a href="#iletisim">İletişim</a>
+  </nav>
+
+  <section id="hakkimizda">
+    <h2>Hacettepe Üniversitesi</h2>
+  </section>
+
+  <!-- ----- HAFTALIK ÖDEVLER ----- -->
+  <section id="odevler">
+    <h2>BTE311 Web Tabanlı Programlama Dersi Görevleri</h2>
+
+    <p>
+      <strong>3. Hafta:</strong><br>
+      Ödev 1 – 
+      <a href="Hafta3/HaftalikProgram.html">HaftalikProgram.html</a>
+    </p>
+
+    <p>
+      <strong>4. Hafta:</strong><br>
+      Ödev 1 – <a href="Hafta4/Form1.html">Form1.html</a><br>
+      Ödev 2 – <a href="Hafta4/test1.html">test1.html</a>
+    </p>
+
+    <p>
+      <strong>5. Hafta:</strong><br>
+      Ödev 1 – 
+      <a href="Hafta5/internal.html">internal.html</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;– 
+      <a href="Hafta5/inline.html">inline.html</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;– 
+      <a href="Hafta5/external.html">external.html</a>
+    </p>
+
+    <!-- ✔✔✔ YENİ EKLENENLER ✔✔✔ -->
+    <p>
+      <strong>9. Hafta:</strong><br>
+      <a href="Hafta9/index.html">Hafta9 / index.html</a>
+    </p>
+
+    <p>
+      <strong>JavaScript Ödev:</strong><br>
+      <a href="JavascriptOdev/19-Flappy-Bird-Game-Utku_Kanat/index.html">
+        Flappy Bird Game – Utku Kanat
+      </a>
+    </p>
+
+    <p>
+      <strong>Emoji Projesi:</strong><br>
+      <a href="emojiler/index.html">Emoji Çalışması (index.html)</a>
+    </p>
+
+  </section>
+  <!-- ----- /HAFTALIK ÖDEVLER ----- -->
+
+  <section id="iletisim">
+    <h2>İletişim</h2>
+    <p>utkukanat@hacettepe.edu.tr</p>
+    <p>Bize ulaşmak için Instagram sayfamızı ziyaret edin:</p>
+    <br><br>
+    <a href="https://www.instagram.com/ukcustoms64/" target="_blank">@ukcustoms1.64</a>
+  </section>
+
+  <footer>
+    © 2025 UK CUSTOMS | Tasarım: Utku Kanat  
+  </footer>
+
+</body>
+</html>
